@@ -1,0 +1,15 @@
+@import "../../../styles/main.scss";
+
+.loaderWrapper {
+  @include flex-layout(row, center, center);
+
+  height: 100%;
+  position: absolute;
+  width: 100%;
+
+  .preloader {
+    @include flex-layout(row, center, center);
+
+    position: absolute;
+  }
+}

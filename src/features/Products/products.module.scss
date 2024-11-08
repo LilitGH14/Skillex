@@ -1,0 +1,24 @@
+@import "../../styles/main.scss";
+
+.container {
+  @include flex-layout(row, center, flex-start);
+
+  .content {
+    width: calc(100% - 100px);
+  }
+
+  .noData {
+    margin: 0 auto;
+    color: black;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .container {
+    .content {
+      position: absolute;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@import "../../../styles/main.scss";
+
+.container {
+  @include theme(#353954, white);
+
+  padding: 0;
+  margin: 16px 12px 16px 40px;
+  position: relative;
+  transition: width 1s ease;
+  border-radius: 8px;
+
+  .opened {
+    width: 300px;
+    border: 1px solid #424769;
+    border-radius: 8px;
+  }
+
+  .closed {
+    width: 0;
+    display: none;
+    border: 1px solid transparent;
+  }
+
+  .header {
+    @include theme($secondaryBg, white);
+
+    padding: 18px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+  }
+
+  .filters {
+    padding: 12px;
+    height: 100%;
+
+    label {
+      @include flex-layout(column, center, flex-start);
+
+      margin-bottom: 12px;
+
+      input {
+        width: 93%;
+      }
+
+      select {
+        width: 100%;
+      }
+
+      input,
+      select {
+        height: 35px;
+        border-radius: 8px;
+        margin-top: 4px;
+        padding: 0 8px;
+      }
+    }
+  }
+
+  .submitBtn {
+    @include flex-layout(row, center, center);
+    @include theme(#20707a, white);
+
+    height: 35px;
+    border-radius: 8px;
+    padding: 0 8px;
+    border: none;
+    cursor: pointer;
+    margin: 20px auto;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.menuButton {
+  @include theme($secondaryBg, transparent);
+
+  position: absolute;
+  left: -27px;
+  width: 60px;
+  height: 58px;
+  top: 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  img {
+    height: 30px;
+  }
+
+  .menu {
+    @include theme(white, transparent);
+
+    width: 1px;
+    height: 9px;
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .container {
+    position: absolute;
+    right: 0;
+    border-radius: 8px;
+  }
+
+  .menuButton {
+    left: -60px;
+  }
+}
